@@ -135,12 +135,21 @@ export function Footer() {
 
         <div>
           <h5>Connect</h5>
+          {PROFILE.email && (
+            <a href={`mailto:${PROFILE.email}`}>Email</a>
+          )}
+          {PROFILE.socials.linkedin && (
+            <a href={PROFILE.socials.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn <ExternalIcon size={12} />
+            </a>
+          )}
           {PROFILE.socials.github && (
             <a href={PROFILE.socials.github} target="_blank" rel="noopener noreferrer">
               GitHub <ExternalIcon size={12} />
             </a>
           )}
         </div>
+      </div>
 
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} {PROFILE.fullName}. Built with React &amp; <span className="heart">♥</span></p>
