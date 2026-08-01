@@ -135,17 +135,11 @@ export function Footer() {
 
         <div>
           <h5>Connect</h5>
-          <div className="footer-socials">
-            {PROFILE.email && (
-              <a href={`mailto:${PROFILE.email}`} aria-label="Email"><MailIcon /></a>
-            )}
-            {PROFILE.socials.linkedin && (
-              <a href={PROFILE.socials.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><LinkedInIcon /></a>
-            )}
-            {PROFILE.socials.github && (
-              <a href={PROFILE.socials.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer"><GitHubIcon /></a>
-            )}
-          </div>
+          {PROFILE.socials.github && (
+            <a href={PROFILE.socials.github} target="_blank" rel="noopener noreferrer">
+              GitHub <ExternalIcon size={12} />
+            </a>
+          )}
         </div>
 
       <div className="footer-bottom">
