@@ -333,25 +333,31 @@ export function Skills() {
 /* ---------------- contact ---------------- */
 
 export function Contact() {
-  usePageMeta(`Contact | ${SITE}`, "Get in touch about research, collaboration, or teaching.");
+  const ghHandle = PROFILE.socials.github?.split("/").filter(Boolean).pop();
+  usePageMeta(`Contact | ${SITE}`, "Get in touch about academic collaborations, mentorship, or opportunities.");
   return (
     <section className="section">
-      <PageHead icon="user" title="Get in Touch" lead="Research, collaboration, teaching — or just chess." />
+      <PageHead icon="user" title="Get in Touch" lead="For academic collaborations, mentorship, or opportunities." />
       <Reveal>
         <div className="contact-grid">
-          <a className="contact-card" href={`mailto:${PROFILE.email}`}>
-            <MailIcon size={22} />
-            <div><h4>Email</h4><p>{PROFILE.email}</p></div>
-          </a>
-          <a className="contact-card" href={PROFILE.socials.linkedin} target="_blank" rel="noopener noreferrer">
-            <LinkedInIcon size={22} />
-            <div><h4>LinkedIn</h4><p>Professional updates and messages</p></div>
-          </a>
-        <a className="contact-card" href={PROFILE.socials.github} target="_blank" rel="noopener noreferrer">
-              <GitHubIcon size={22} />
-              <div><h4>GitHub</h4><p>@zvfrozel</p></div>
+          {PROFILE.email && (
+            <a className="contact-card" href={`mailto:${PROFILE.email}`}>
+              <MailIcon size={22} />
+              <div><h4>Email</h4><p>{PROFILE.email}</p></div>
             </a>
-          </a>
+          )}
+          {PROFILE.socials.linkedin && (
+            <a className="contact-card" href={PROFILE.socials.linkedin} target="_blank" rel="noopener noreferrer">
+              <LinkedInIcon size={22} />
+              <div><h4>LinkedIn</h4><p>Professional updates and messages</p></div>
+            </a>
+          )}
+          {PROFILE.socials.github && (
+            <a className="contact-card" href={PROFILE.socials.github} target="_blank" rel="noopener noreferrer">
+              <GitHubIcon size={22} />
+              <div><h4>GitHub</h4><p>@{ghHandle}</p></div>
+            </a>
+          )}
         </div>
       </Reveal>
     </section>
