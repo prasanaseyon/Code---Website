@@ -347,9 +347,10 @@ export function Contact() {
             <LinkedInIcon size={22} />
             <div><h4>LinkedIn</h4><p>Professional updates and messages</p></div>
           </a>
-          <a className="contact-card" href={PROFILE.socials.github} target="_blank" rel="noopener noreferrer">
-            <GitHubIcon size={22} />
-            <div><h4>GitHub</h4><p>Code, forks, and works in progress</p></div>
+        <a className="contact-card" href={PROFILE.socials.github} target="_blank" rel="noopener noreferrer">
+              <GitHubIcon size={22} />
+              <div><h4>GitHub</h4><p>@zvfrozel</p></div>
+            </a>
           </a>
         </div>
       </Reveal>
