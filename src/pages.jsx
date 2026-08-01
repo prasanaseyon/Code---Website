@@ -12,7 +12,7 @@ import {
   GitHubIcon, Arrow, BackArrow, MailIcon, LinkedInIcon,
 } from "./ui";
 
-const SITE = "S M A Nahian";
+const SITE = "Abel George Mathew";
 
 /* ---------------- home ---------------- */
 
