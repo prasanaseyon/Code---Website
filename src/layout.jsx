@@ -148,12 +148,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} {PROFILE.fullName}. Built with React &amp; <span className="heart">♥</span></p>
-        <div className="footer-badges">
-          <span>IMO Gold '26</span><span>INMO AIR 1</span><span>APMO Bronze</span>
-        </div>
-      </div>
+      
     </footer>
   );
 }
