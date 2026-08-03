@@ -4,11 +4,11 @@
 import React from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import {
-  PROFILE, EXPERIENCE, PROJECTS, AWARDS, PUBLICATIONS, ARTICLES, VOLUNTEER, SKILLS,
+  PROFILE, EXPERIENCE, PROJECTS, AWARDS, ARTICLES, VOLUNTEER, SKILLS, SPORTS,
 } from "./data";
 import {
-  Reveal, SectionHead, PageHead, Tag, TagList, usePageMeta, SECTION_ICONS,
-  ExperienceCard, ProjectCard, AwardCard, PublicationRow, ArticleRow,
+  Reveal, SectionHead, PageHead, Tag, TagList, usePageMeta,
+  ExperienceCard, ProjectCard, AwardCard, ArticleRow,
   GitHubIcon, Arrow, BackArrow, MailIcon, LinkedInIcon,
 } from "./ui";
 
@@ -20,17 +20,22 @@ const Hero = () => (
   <section className="hero">
     <div className="orb orb-a" />
     <div className="orb orb-b" />
-    <div className="hero-inner">
-      <h1 className="hero-name">
-        <span className="ln-1">{PROFILE.first}</span>
-        <span className="ln-2">{PROFILE.last}</span>
-      </h1>
-      <p className="hero-tag">{PROFILE.tagline}</p>
-      <div className="cta-row">
-        <Link className="btn btn-primary" to="/about">About Me <Arrow /></Link>
-        <a className="btn btn-ghost" href={PROFILE.socials.github} target="_blank" rel="noopener noreferrer">
-          <GitHubIcon size={16} /> GitHub
-        </a>
+    <div className="hero-inner hero-split">
+      {PROFILE.photo && (
+        <div className="hero-photo">
+          <img src={PROFILE.photo} alt={PROFILE.fullName} />
+        </div>
+      )}
+      <div className="hero-text">
+        <h1 className="hero-name">
+          <span className="ln-1">{PROFILE.first}</span>
+          <span className="ln-2">{PROFILE.last}</span>
+        </h1>
+        <p className="hero-tag">{PROFILE.tagline}</p>
+        <div className="cta-row">
+          <Link className="btn btn-primary" to="/about">About Me <Arrow /></Link>
+          <a className="btn btn-ghost" href={PROFILE.cv} download>View My Resume</a>
+        </div>
       </div>
     </div>
   </section>
@@ -41,14 +46,12 @@ const ConnectPanel = () => (
     <div className="connect">
       <h2 className="connect-title">Let's Connect</h2>
       <p>
-        Interested in collaboration, research opportunities, or just want to chat about
-        mathematics, competitive programming, or chess? I'd love to hear from you.
+        For academic collaborations, mentorship, or opportunities — or just to talk about
+        Olympiad problems, formal systems, or chess — I'd love to hear from you.
       </p>
       <div className="cta-row">
         <Link className="btn btn-primary" to="/contact">Get in Touch <Arrow /></Link>
-        <a className="btn btn-ghost" href={PROFILE.socials.linkedin} target="_blank" rel="noopener noreferrer">
-          LinkedIn Profile
-        </a>
+        <Link className="btn btn-ghost" to="/awards">See Achievements</Link>
       </div>
     </div>
   </Reveal>
@@ -56,15 +59,15 @@ const ConnectPanel = () => (
 
 export function Home() {
   usePageMeta(
-    `${SITE} | MIT '29 · IMO Medalist · Codeforces Master`,
-    "MIT '29 student, two-time IMO bronze medalist, Codeforces Master, and researcher in graph theory, cybersecurity, and formal verification."
+    `${SITE} | IMO Gold Medalist · Olympiad Mathematician`,
+    "Grade 11 student from Bangalore, India — IMO gold and silver medalist, INMO All India Rank 1, and researcher in Olympiad mathematics, AI for mathematics, and theoretical computer science."
   );
   return (
     <>
       <Hero />
 
       <section className="section">
-        <SectionHead icon="briefcase" title="Work Experience" to="/work" />
+        <SectionHead icon="briefcase" title="Research Engagement & Instructor" to="/work" />
         <div className="grid-3">
           {EXPERIENCE.filter((e) => e.featured).map((e, i) => (
             <Reveal key={e.role + e.org} delay={i * 90}><ExperienceCard e={e} /></Reveal>
@@ -82,7 +85,7 @@ export function Home() {
       </section>
 
       <section className="section">
-        <SectionHead icon="medal" title="Honors & Awards" to="/awards" />
+        <SectionHead icon="medal" title="Achievements" to="/awards" />
         <div className="grid-3 tight">
           {AWARDS.filter((a) => a.featured).map((a, i) => (
             <Reveal key={a.title} delay={i * 70}><AwardCard a={a} /></Reveal>
@@ -91,14 +94,16 @@ export function Home() {
       </section>
 
       <section className="section">
-        <SectionHead icon="book" title="Publications" to="/publications" />
-        {PUBLICATIONS.filter((p) => p.featured).map((p) => (
-          <Reveal key={p.title}><PublicationRow p={p} /></Reveal>
-        ))}
+        <SectionHead icon="book" title="Articles" to="/publications" />
+        <div className="stack">
+          {ARTICLES.map((a, i) => (
+            <Reveal key={a.title} delay={i * 60}><ArticleRow a={a} /></Reveal>
+          ))}
+        </div>
       </section>
 
       <section className="section">
-        <SectionHead icon="people" title="Volunteering & Teaching" to="/volunteering" />
+        <SectionHead icon="people" title="Leadership & Teaching" to="/volunteering" />
         <Reveal>
           <div className="vol-panel">
             <div className="vol-stats">
@@ -121,10 +126,10 @@ export function Home() {
 /* ---------------- about ---------------- */
 
 export function About() {
-  usePageMeta(`About | ${SITE}`, "Background, research interests, and competition history.");
+  usePageMeta(`About | ${SITE}`, "Background, research interests, and Olympiad history.");
   return (
     <section className="section">
-      <PageHead icon="user" title="About" lead="Mathematics, algorithms, and systems that can be proven correct." />
+      <PageHead icon="user" title="About" lead="Proof-based mathematics, Olympiad problem solving, and theoretical computer science." />
       <Reveal>
         <div className="prose">
           {PROFILE.bio.map((para, i) => <p key={i}>{para}</p>)}
@@ -132,13 +137,13 @@ export function About() {
       </Reveal>
       <Reveal delay={120}>
         <div className="fact-grid">
-          <div><span>Studying</span><strong>MIT, Class of 2029</strong></div>
-          <div><span>Based in</span><strong>Cambridge, MA</strong></div>
-          <div><span>Peak Codeforces</span><strong>2147 — Master</strong></div>
-          <div><span>Best IMO rank</span><strong>145th (2023)</strong></div>
+          <div><span>Studying</span><strong>Grade 11, Creative School</strong></div>
+          <div><span>Based in</span><strong>Bangalore, India</strong></div>
+          <div><span>IMO 2026</span><strong>Gold Medal</strong></div>
+          <div><span>INMO 2025</span><strong>All India Rank 1</strong></div>
         </div>
       </Reveal>
-      <Reveal delay={200}><ConnectPanel /></Reveal>
+     
     </section>
   );
 }
@@ -146,10 +151,10 @@ export function About() {
 /* ---------------- list pages ---------------- */
 
 export function Work() {
-  usePageMeta(`Work Experience | ${SITE}`, "Research and engineering roles.");
+  usePageMeta(`Research | ${SITE}`, "Research engagement, teaching, and invited lectures.");
   return (
     <section className="section">
-      <PageHead icon="briefcase" title="Work Experience" lead="Research labs and engineering teams I've been part of." />
+      <PageHead icon="briefcase" title="Research engagement & Instructor " lead="Research engagement, teaching, and invited lectures." />
       <div className="stack">
         {EXPERIENCE.map((e, i) => (
           <Reveal key={e.slug} delay={i * 70}>
@@ -175,7 +180,7 @@ export function Work() {
                     {e.bullets.map((b) => <li key={b}><span className="bullet-arrow">▸</span>{b}</li>)}
                   </ul>
                 )}
-                <div className="tags flat">{e.tags.map((t) => <Tag key={t}>{t}</Tag>)}</div>
+                <TagList items={e.tags} />
               </div>
             </Link>
           </Reveal>
@@ -193,7 +198,7 @@ export function WorkDetail() {
 
   return (
     <section className="section">
-      <Link className="back-link" to="/work"><BackArrow /> Back to Work Experience</Link>
+      <Link className="back-link" to="/work"><BackArrow /> Back to Research</Link>
 
       <header className="detail-head">
         <img className="detail-logo" src={e.logo} alt="" />
@@ -215,14 +220,14 @@ export function WorkDetail() {
 
           {e.bullets && (
             <>
-              <h2>Key Responsibilities &amp; Achievements</h2>
+              <h2>Key Contributions &amp; Achievements</h2>
               <ul className="bullets">
                 {e.bullets.map((b) => <li key={b}><span className="bullet-arrow">▸</span>{b}</li>)}
               </ul>
             </>
           )}
 
-          <h2>Skills &amp; Technologies</h2>
+          <h2>Areas &amp; Skills</h2>
           <div className="tags centered">{e.tags.map((t) => <Tag key={t}>{t}</Tag>)}</div>
         </div>
       </Reveal>
@@ -231,10 +236,10 @@ export function WorkDetail() {
 }
 
 export function Projects() {
-  usePageMeta(`Projects | ${SITE}`, "Open-source, research, and hackathon projects.");
+  usePageMeta(`Projects | ${SITE}`, "Mathematics and programming projects.");
   return (
     <section className="section">
-      <PageHead icon="code" title="Projects" lead="Things I've built, contributed to, or broken and rebuilt." />
+      <PageHead icon="code" title="Projects" lead="Things I've built while exploring mathematics and code." />
       <div className="stack">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.name} delay={i * 60}><ProjectCard p={p} wide /></Reveal>
@@ -245,10 +250,10 @@ export function Projects() {
 }
 
 export function Awards() {
-  usePageMeta(`Honors & Awards | ${SITE}`, "Olympiad medals, competition results, and titles.");
+  usePageMeta(`Achievements | ${SITE}`, "Olympiad medals, national ranks, and competition results.");
   return (
     <section className="section">
-      <PageHead icon="medal" title="Honors & Awards" lead="Olympiad medals, contest results, and titles." />
+      <PageHead icon="medal" title="Achievements" lead="Olympiad medals, national ranks, and competition results." />
       <div className="grid-2">
         {AWARDS.map((a, i) => (
           <Reveal key={a.title} delay={i * 70}><AwardCard a={a} showDetail /></Reveal>
@@ -259,20 +264,10 @@ export function Awards() {
 }
 
 export function Publications() {
-  usePageMeta(`Publications | ${SITE}`, "Peer-reviewed papers, articles, and olympiad solutions.");
+  usePageMeta(`Articles | ${SITE}`, "Areas of mathematical and computational interest.");
   return (
     <section className="section">
-      <PageHead icon="book" title="Publications" lead="Peer-reviewed papers and preprints." />
-      <div className="stack">
-        {PUBLICATIONS.map((p, i) => (
-          <Reveal key={p.title} delay={i * 80}><PublicationRow p={p} showAbstract /></Reveal>
-        ))}
-      </div>
-
-      <div className="sub-head">
-        <span className="sub-ico">{SECTION_ICONS.book}</span>
-        <h2>Articles &amp; Solutions</h2>
-      </div>
+      <PageHead icon="book" title="Articles" lead="" />
       <div className="stack">
         {ARTICLES.map((a, i) => (
           <Reveal key={a.title} delay={i * 60}><ArticleRow a={a} /></Reveal>
@@ -283,10 +278,10 @@ export function Publications() {
 }
 
 export function Volunteering() {
-  usePageMeta(`Volunteering & Teaching | ${SITE}`, "Teaching olympiad mathematics and community work.");
+  usePageMeta(`Leadership & Teaching | ${SITE}`, "Teaching Olympiad mathematics, mentorship, and activities.");
   return (
     <section className="section">
-      <PageHead icon="people" title="Volunteering & Teaching" lead="Giving back to the community that trained me." />
+      <PageHead icon="people" title="Leadership & Teaching" lead="Making advanced mathematics more accessible." />
       <Reveal>
         <div className="vol-panel">
           <div className="vol-stats">
@@ -312,10 +307,10 @@ export function Volunteering() {
 }
 
 export function Skills() {
-  usePageMeta(`Skills | ${SITE}`, "Mathematics, languages, systems, and research skills.");
+  usePageMeta(`Skills | ${SITE}`, "Programming, tools, mathematics, and academic interests.");
   return (
     <section className="section">
-      <PageHead icon="spark" title="Skills" lead="What I reach for, roughly in order of confidence." />
+      <PageHead icon="spark" title="Skills" lead="Technical tools and mathematical areas I work in." />
       <div className="grid-2">
         {SKILLS.map((s, i) => (
           <Reveal key={s.group} delay={i * 80}>
@@ -323,6 +318,38 @@ export function Skills() {
               <h3>{s.group}</h3>
               <div className="tags">{s.items.map((t) => <Tag key={t}>{t}</Tag>)}</div>
             </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function Sports() {
+  usePageMeta(`Sports | ${SITE}`, "Basketball, badminton, chess, scrabble, and sports leadership.");
+  return (
+    <section className="section">
+      <PageHead
+        icon="trophy"
+        title="Sports"
+        lead="Sports build the discipline, resilience, and composure that mathematics alone doesn't teach."
+      />
+      <div className="grid-3 tight">
+        {SPORTS.map((s, i) => (
+          <Reveal key={s.name} delay={i * 70}>
+            {s.link ? (
+              <a className="sport-card" href={s.link} target="_blank" rel="noopener noreferrer">
+                <span className="sport-ico">{s.icon}</span>
+                <h4>{s.name}</h4>
+                <p>{s.desc}</p>
+              </a>
+            ) : (
+              <article className="sport-card">
+                <span className="sport-ico">{s.icon}</span>
+                <h4>{s.name}</h4>
+                <p>{s.desc}</p>
+              </article>
+            )}
           </Reveal>
         ))}
       </div>
