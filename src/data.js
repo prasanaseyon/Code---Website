@@ -16,7 +16,7 @@ export const PROFILE = {
     "My goal is to explore the frontier of mathematical reasoning and contribute to systems that combine rigorous human thought with emerging artificial intelligence — applying analytical thinking and computational innovation to problems at the intersection of mathematics, technology, and intelligent systems.",
   ],
   socials: {
-    github: "http://localhost:5173/",
+    github: "https://github.com/zvfrozel",
     scholar: "",
     linkedin: "",
     codeforces: "",
