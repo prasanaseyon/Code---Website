@@ -16,7 +16,7 @@ export const PROFILE = {
     "My goal is to explore the frontier of mathematical reasoning and contribute to systems that combine rigorous human thought with emerging artificial intelligence — applying analytical thinking and computational innovation to problems at the intersection of mathematics, technology, and intelligent systems.",
   ],
   socials: {
-    github: "https://github.com/zvfrozel",
+    github: "",
     scholar: "",
     linkedin: "",
     codeforces: "",
@@ -25,6 +25,7 @@ export const PROFILE = {
     twitter: "",
   },
   cv: "/CV.pdf",
+  photo: "/photo.jpg",
 };
 
 export const NAV = [
@@ -35,51 +36,36 @@ export const NAV = [
     children: [
       { label: "Research", to: "/work" },
       { label: "Projects", to: "/projects" },
+       { label: "Articles", to: "/publications" },
     ],
   },
   {
-    label: "Academics",
-    children: [
-      { label: "Academic Distinctions", to: "/publications" },
-      { label: "Skills", to: "/skills" },
-    ],
+    label: "Skills",
+    
+      label: "Skills", to: "/skills",
+    
   },
   { label: "Achievements", to: "/awards" },
   {
-    label: "More",
-    children: [
-      { label: "Leadership & Teaching", to: "/volunteering" },
-      { label: "Contact", to: "/contact" },
-    ],
+    label: "Leadership & Teaching",
+   
+      label: "Leadership & Teaching", to: "/volunteering",
+    
   },
+ 
+  { label: "Sports", to: "/sports" },
+    
+  
 ];
 
 /* ---- Research & engagement (renders as "Work Experience" cards) ---- */
 
 export const EXPERIENCE = [
   {
-    slug: "imo-2025-india",
-    role: "International Representation",
-    org: "International Mathematical Olympiad (IMO) 2025",
-    logo: "/logos/imo.png",
-    location: "Sunshine Coast, Australia",
-    dates: "Jul 2025",
-    meta: "Jul 2025 · Sunshine Coast, Australia ·",
-    badge: "Team India",
-    desc: "Represented India at the International Mathematical Olympiad, competing against the strongest Olympiad students worldwide.",
-    bullets: [
-      "Selected among the top 6 students nationwide to represent India",
-      "Achieved Silver Medal, ranking among the top performers globally (Rank 78)",
-      "Competed at the IMO held in Sunshine Coast, Australia",
-    ],
-    tags: ["Olympiad Mathematics", "Combinatorics", "Number Theory"],
-    featured: true,
-  },
-  {
     slug: "mercor-frontier-math",
     role: "Research & Advanced Engagement",
     org: "IMO–Frontier Math Project (Mercor)",
-    logo: "/logos/mercor.png",
+    logo: "/logos/mercor.jfif",
     location: "Remote",
     dates: "Nov 2025 – Feb 2026",
     meta: "Nov 2025 – Feb 2026 · Remote ·",
@@ -97,7 +83,7 @@ export const EXPERIENCE = [
     slug: "sophie-fellowship",
     role: "Organiser & Instructor",
     org: "Sophie Fellowship",
-    logo: "/logos/sophie-fellowship.png",
+    logo: "/logos/sophie-fellowship.avif",
     location: "India · Remote",
     dates: "2024 – Present",
     meta: "2024 – Present · India · Remote ·",
@@ -115,7 +101,7 @@ export const EXPERIENCE = [
     slug: "inmotc-guest-lecturer",
     role: "Guest Lecturer",
     org: "Karnataka INMOTC 2025",
-    logo: "/logos/inmo.png",
+    logo: "/logos/inmo.avif",
     location: "Karnataka, India",
     dates: "2025",
     meta: "2025 · Karnataka, India ·",
@@ -126,13 +112,13 @@ export const EXPERIENCE = [
       "Covered proof strategies across combinatorics and number theory",
     ],
     tags: ["Teaching", "Olympiad Mathematics"],
-    featured: false,
+    featured: true,
   },
   {
     slug: "deva-matha-college",
     role: "Guest Speaker",
     org: "Deva Matha College, Kuravilangad",
-    logo: "/logos/deva-matha.png",
+    logo: "/logos/deva-matha.avif",
     location: "Kerala, India",
     dates: "2025",
     meta: "2025 · Kerala, India ·",
@@ -149,7 +135,7 @@ export const EXPERIENCE = [
     slug: "vedic-mathrix-2024",
     role: "Instructor",
     org: "Vedic Mathrix Camp 2024",
-    logo: "/logos/vedic-mathrix.png",
+    logo: "/logos/vedic-mathrix.avif",
     location: "India",
     dates: "2024",
     meta: "2024 · India ·",
@@ -213,10 +199,10 @@ export const AWARDS = [
     featured: true,
   },
   {
-    icon: "🏅",
-    title: "Indian National Mathematical Olympiad (INMO)",
-    meta: "2022 – 2025",
-    detail: "All India Rank 1 in 2025; perfect score and top 4 nationwide in 2024; 4-time INMO awardee.",
+    icon: "🥇",
+    title: "Asian Pacific Mathematical Olympiad (APMO) 2026",
+    meta: "2026",
+    detail: "Gold Medalist, ranking in the top 5 in India.",
     link: "",
     featured: true,
   },
@@ -229,6 +215,14 @@ export const AWARDS = [
     featured: true,
   },
   {
+    icon: "🏅",
+    title: "Indian National Mathematical Olympiad (INMO)",
+    meta: "2022 – 2025",
+    detail: "All India Rank 1 in 2025; perfect score and top 4 nationwide in 2024; 4-time INMO awardee since Class 8.",
+    link: "",
+    featured: true,
+  },
+  {
     icon: "💻",
     title: "Indian National Olympiad in Informatics (INOI) 2024",
     meta: "2024",
@@ -237,86 +231,44 @@ export const AWARDS = [
     featured: true,
   },
   {
-    icon: "🎓",
-    title: "SAT — 1540/1600",
-    meta: "",
-    detail: "Perfect 800 in Mathematics; 740 in Reading & Writing.",
+    icon: "🏆",
+    title: "Cambridge Outstanding Learner Award",
+    meta: "IGCSE",
+    detail: "Awarded by Cambridge Assessment International Education for exceptional performance in IGCSE Combined Sciences.",
     link: "",
-    featured: true,
+    featured: false,
   },
   {
     icon: "🔤",
     title: "World Youth Scrabble Championship",
     meta: "Malaysia, 2025",
-    detail: "Represented India. WESPA rating 1613.",
+    detail: "4-time qualifier. Represented India. WESPA rating 1613.",
     link: "",
     featured: false,
   },
 ];
 
-/* ---- Academic distinctions (renders on the Publications route) ---- */
-
-export const PUBLICATIONS = [
-  {
-    title: "Cambridge Outstanding Learner Award",
-    venue: "Cambridge Assessment International Education",
-    status: "AWARDED",
-    date: "IGCSE",
-    authors: "",
-    abstract:
-      "Awarded for exceptional performance in IGCSE Combined Sciences, recognizing top-tier academic excellence across the examination cycle.",
-    link: "",
-    featured: true,
-  },
-  {
-    title: "4-time INMO Awardee",
-    venue: "Indian National Mathematical Olympiad",
-    status: "AWARDED",
-    date: "Since Class 8",
-    authors: "",
-    abstract:
-      "Recognized four times at the Indian National Mathematical Olympiad level, including a perfect score in INMO 2024, reflecting sustained national-level excellence since Class 8.",
-    link: "",
-    featured: true,
-  },
-  {
-    title: "AS & A Level Rigor",
-    venue: "Cambridge International",
-    status: "IN PROGRESS",
-    date: "Ongoing",
-    authors: "",
-    abstract:
-      "Advanced study across Mathematics, Further Mathematics, and Computer Science, developing strong foundations in abstraction, proof, and theoretical thinking.",
-    link: "",
-    featured: false,
-  },
-];
-
-/* ---- Research interests (renders as the "Articles" list) ---- */
+/* ---- Research interests ---- */
 
 export const ARTICLES = [
   {
     title: "Olympiad Mathematics",
     outlet: "Advanced problem solving, proof strategies, combinatorics, inequalities, and number theory",
-    date: "Research interest",
     link: "",
   },
   {
     title: "Artificial Intelligence for Mathematics",
     outlet: "Symbolic reasoning systems, theorem exploration, and AI-assisted mathematical discovery",
-    date: "Research interest",
     link: "",
   },
   {
     title: "Theoretical Computer Science",
     outlet: "Algorithms, complexity, abstraction, and computational structures",
-    date: "Research interest",
     link: "",
   },
   {
     title: "Mathematical Logic & Formal Systems",
     outlet: "Formal reasoning pathways, proof systems, and foundational mathematical structures",
-    date: "Research interest",
     link: "",
   },
 ];
@@ -355,13 +307,41 @@ export const VOLUNTEER = {
       role: "Instructor",
       desc: "Facilitated a hands-on session for the Raising a Mathematician Foundation, focused on interactive and conceptual mathematical exploration.",
     },
-    {
-      name: "Sports & Strategy",
-      role: "Basketball · Chess · Badminton · Scrabble",
-      desc: "Held Sports Captain and Vice Captain roles, and represented India at the World Youth Scrabble Championship in Malaysia, 2025. These build the discipline, resilience, and composure that mathematics alone doesn't teach.",
-    },
+    
   ],
 };
+
+/* ---- Sports & strategy ---- */
+
+export const SPORTS = [
+  {
+    icon: "🏀",
+    name: "Basketball",
+    desc: "Served in leadership roles within school basketball initiatives, developing teamwork, communication, and on-court decision making.",
+  },
+  {
+    icon: "🏸",
+    name: "Badminton",
+    desc: "Actively participated in competitive badminton, strengthening discipline, focus, and consistency through individual performance.",
+  },
+  {
+    icon: "🏅",
+    name: "Sports Leadership",
+    desc: "Held positions including Sports Captain and Vice Captain, contributing toward team coordination, leadership, and student engagement.",
+  },
+  {
+    icon: "♟️",
+    name: "Chess",
+    desc: "Exploring structured thinking, long-term planning, and tactical decision making through competitive chess.",
+    link: "https://ratings.fide.com/profile/33332240",
+
+  },
+  {
+    icon: "🔤",
+    name: "Scrabble",
+    desc: "WESPA rating 1613. Represented India at the World Youth Scrabble Championship in Malaysia, 2025.",
+  },
+];
 
 /* ---- Skills ---- */
 
@@ -388,7 +368,7 @@ export const FOOTER_NAV = [
   { label: "Home", to: "/" },
   { label: "Projects", to: "/projects" },
   { label: "Achievements", to: "/awards" },
-  { label: "Academics", to: "/publications" },
+  { label: "Research Interests", to: "/publications" },
   { label: "Leadership", to: "/volunteering" },
   { label: "Skills", to: "/skills" },
   { label: "About", to: "/about" },
