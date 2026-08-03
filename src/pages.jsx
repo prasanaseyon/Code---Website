@@ -129,7 +129,7 @@ export function About() {
   usePageMeta(`About | ${SITE}`, "Background, research interests, and Olympiad history.");
   return (
     <section className="section">
-      <PageHead icon="user" title="About" lead="Proof-based mathematics, Olympiad problem solving, and theoretical computer science." />
+      <PageHead icon="user" title="About" lead="" />
       <Reveal>
         <div className="prose">
           {PROFILE.bio.map((para, i) => <p key={i}>{para}</p>)}
