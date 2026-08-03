@@ -39,7 +39,6 @@ export function Navbar() {
 
   return (
     <header className="nav-wrap">
-      <Link className="brand" to="/">AGM<span>.</span></Link>
 
       <nav className="pill">
         {NAV.map((item) =>
