@@ -147,6 +147,12 @@ export function Footer() {
           )}
         </div>
       </div>
+       <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} {PROFILE.fullName}. Built with React &amp; <span className="heart">♥</span></p>
+        <div className="footer-badges">
+         
+        </div>
+      </div>
 
       
     </footer>
