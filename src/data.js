@@ -24,7 +24,7 @@ export const PROFILE = {
     imo: "https://www.imo-official.org/results/contestant/35510/",
     twitter: "",
   },
-  cv: "/CV.pdf",
+  cv: "",
   photo: "/photo.jpg",
   aboutPhoto: "/aboutPhoto.jpg",
 
