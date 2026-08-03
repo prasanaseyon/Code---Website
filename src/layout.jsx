@@ -86,9 +86,7 @@ export function Navbar() {
         {PROFILE.socials.linkedin && (
           <a href={PROFILE.socials.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><LinkedInIcon /></a>
         )}
-        {PROFILE.socials.github && (
-          <a href={PROFILE.socials.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer"><GitHubIcon /></a>
-        )}
+        
       </div>
 
       <button className="burger" aria-label="Open menu" aria-expanded={mobile}
