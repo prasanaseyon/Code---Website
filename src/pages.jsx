@@ -131,8 +131,15 @@ export function About() {
     <section className="section">
       <PageHead icon="user" title="About" lead="" />
       <Reveal>
-        <div className="prose">
-          {PROFILE.bio.map((para, i) => <p key={i}>{para}</p>)}
+        <div className="about-split">
+          <div className="prose">
+            {PROFILE.bio.map((para, i) => <p key={i}>{para}</p>)}
+          </div>
+          {PROFILE.aboutPhoto && (
+            <figure className="about-photo">
+              <img src={PROFILE.aboutPhoto} alt="" />
+            </figure>
+          )}
         </div>
       </Reveal>
       <Reveal delay={120}>
