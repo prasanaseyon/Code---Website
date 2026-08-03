@@ -154,7 +154,7 @@ export function Work() {
   usePageMeta(`Research | ${SITE}`, "Research engagement, teaching, and invited lectures.");
   return (
     <section className="section">
-      <PageHead icon="briefcase" title="Research engagement & Instructor " lead="Research engagement, teaching, and invited lectures." />
+      <PageHead icon="briefcase" title="Research engagement & Instructor " lead="" />
       <div className="stack">
         {EXPERIENCE.map((e, i) => (
           <Reveal key={e.slug} delay={i * 70}>
@@ -239,7 +239,7 @@ export function Projects() {
   usePageMeta(`Projects | ${SITE}`, "Mathematics and programming projects.");
   return (
     <section className="section">
-      <PageHead icon="code" title="Projects" lead="Things I've built while exploring mathematics and code." />
+      <PageHead icon="code" title="Projects" lead="" />
       <div className="stack">
         {PROJECTS.map((p, i) => (
           <Reveal key={p.name} delay={i * 60}><ProjectCard p={p} wide /></Reveal>
@@ -253,7 +253,7 @@ export function Awards() {
   usePageMeta(`Achievements | ${SITE}`, "Olympiad medals, national ranks, and competition results.");
   return (
     <section className="section">
-      <PageHead icon="medal" title="Achievements" lead="Olympiad medals, national ranks, and competition results." />
+      <PageHead icon="medal" title="Achievements" lead="" />
       <div className="grid-2">
         {AWARDS.map((a, i) => (
           <Reveal key={a.title} delay={i * 70}><AwardCard a={a} showDetail /></Reveal>
@@ -281,7 +281,7 @@ export function Volunteering() {
   usePageMeta(`Leadership & Teaching | ${SITE}`, "Teaching Olympiad mathematics, mentorship, and activities.");
   return (
     <section className="section">
-      <PageHead icon="people" title="Leadership & Teaching" lead="Making advanced mathematics more accessible." />
+      <PageHead icon="people" title="Leadership & Teaching" lead="" />
       <Reveal>
         <div className="vol-panel">
           <div className="vol-stats">
@@ -310,7 +310,7 @@ export function Skills() {
   usePageMeta(`Skills | ${SITE}`, "Programming, tools, mathematics, and academic interests.");
   return (
     <section className="section">
-      <PageHead icon="spark" title="Skills" lead="Technical tools and mathematical areas I work in." />
+      <PageHead icon="spark" title="Skills" lead="" />
       <div className="grid-2">
         {SKILLS.map((s, i) => (
           <Reveal key={s.group} delay={i * 80}>
@@ -332,7 +332,7 @@ export function Sports() {
       <PageHead
         icon="trophy"
         title="Sports"
-        lead="Sports build the discipline, resilience, and composure that mathematics alone doesn't teach."
+        lead=""
       />
       <div className="grid-3 tight">
         {SPORTS.map((s, i) => (
