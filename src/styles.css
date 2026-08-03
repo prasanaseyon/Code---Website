@@ -29,7 +29,7 @@ button{font-family:inherit}
 main{flex:1}
 
 /* ---------- nav ---------- */
-.nav-wrap{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+.nav-wrap{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:center;
   gap:24px;padding:14px 34px;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line)}
 .brand{font-weight:900;font-size:24px;letter-spacing:-.02em;color:var(--text)}
@@ -317,4 +317,28 @@ a.award{cursor:pointer}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
+}
+
+.sport-card{height:100%;padding:30px 26px;border-radius:16px;border:1px solid var(--line);
+  background:var(--card);box-shadow:0 1px 3px rgba(45,30,80,.05);
+  transition:transform .22s,border-color .22s,box-shadow .22s}
+.sport-card:hover{transform:translateY(-4px);border-color:var(--accent-line);
+  box-shadow:0 16px 34px rgba(45,30,80,.1)}
+.sport-ico{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;
+  background:var(--accent-soft);font-size:26px;line-height:1;margin-bottom:18px}
+.sport-card h4{font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.sport-card p{margin-top:10px;font-size:14.5px;line-height:1.65;color:var(--muted)}
+a.sport-card{cursor:pointer;display:block}
+
+.hero-split{display:flex;align-items:center;gap:64px;text-align:left;
+  max-width:1100px;margin:0 auto;padding:0 34px}
+.hero-photo{flex-shrink:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-photo img{width:280px;height:340px;object-fit:cover;border-radius:20px;
+  border:1px solid var(--line);box-shadow:0 20px 50px rgba(45,30,80,.14)}
+.hero-split .hero-name{justify-content:flex-start}
+.hero-split .cta-row{justify-content:flex-start}
+@media (max-width:860px){
+  .hero-split{flex-direction:column;gap:36px;text-align:center}
+  .hero-photo img{width:190px;height:230px}
+  .hero-split .hero-name,.hero-split .cta-row{justify-content:center}
 }
