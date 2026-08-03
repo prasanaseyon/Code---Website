@@ -67,6 +67,8 @@ export const SECTION_ICONS = {
   people: <Ico size={26} d={<><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 5.2a3.4 3.4 0 0 1 0 6.6M18 14.5a6.4 6.4 0 0 1 3.5 5.5"/></>} />,
   spark: <Ico size={26} d={<><path d="M12 2.5 14.2 9l6.8 2.2-6.8 2.2L12 20l-2.2-6.6L3 11.2 9.8 9Z"/></>} />,
   user: <Ico size={26} d={<><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></>} />,
+  bookSm: <Ico size={14} d={<><path d="M4 4.5A2 2 0 0 1 6 2.5h13v17H6a2 2 0 0 0-2 2Z"/></>} />,
+  trophy: <Ico size={26} d={<><path d="M7 4h10v5a5 5 0 0 1-10 0Z"/><path d="M7 6H4.5a2.5 2.5 0 0 0 2.5 4M17 6h2.5a2.5 2.5 0 0 1-2.5 4"/><path d="M12 14v4M9 21h6"/></>} />,
 };
 
 /* ---------------- primitives ---------------- */
@@ -199,35 +201,22 @@ export const AwardCard = ({ a, showDetail = false }) => {
   );
 };
 
-export const PublicationRow = ({ p, showAbstract = false }) => (
-  <a className="pub" href={p.link} target="_blank" rel="noopener noreferrer">
-    <div>
-      <h3>{p.title}</h3>
-      <p className="pub-line">
-        <span className="pub-venue">{p.venue}</span>
-        <span className="pub-status">{p.status}</span>
-        <span className="pub-date">{p.date}</span>
-      </p>
-      {showAbstract && p.abstract && (
-        <>
-          <p className="pub-authors">{p.authors}</p>
-          <p className="pub-abstract">{p.abstract}</p>
-        </>
-      )}
-    </div>
-    <ExternalIcon size={17} />
-  </a>
-);
-
-export const ArticleRow = ({ a }) => (
-  <a className="article-row" href={a.link} target="_blank" rel="noopener noreferrer">
-    <div>
-      <h3>{a.title}</h3>
-      <p className="article-meta">
-        <span className="article-outlet">{SECTION_ICONS.bookSm} {a.outlet}</span>
-        <span className="article-date">{SECTION_ICONS.calSm} {a.date}</span>
-      </p>
-    </div>
-    <span className="icon-box"><ExternalIcon size={16} /></span>
-  </a>
-); 
+export const ArticleRow = ({ a }) => {
+  const inner = (
+    <>
+      <div>
+        <h3>{a.title}</h3>
+        <p className="article-meta">
+          <span className="article-outlet">{SECTION_ICONS.bookSm} {a.outlet}</span>
+          {a.date && <span className="article-date">{a.date}</span>}
+        </p>
+      </div>
+      {a.link && <span className="icon-box"><ExternalIcon size={16} /></span>}
+    </>
+  );
+  return a.link ? (
+    <a className="article-row" href={a.link} target="_blank" rel="noopener noreferrer">{inner}</a>
+  ) : (
+    <article className="article-row">{inner}</article>
+  );
+};
