@@ -26,6 +26,8 @@ export const PROFILE = {
   },
   cv: "/CV.pdf",
   photo: "/photo.jpg",
+  aboutPhoto: "/aboutPhoto.jpg",
+
 };
 
 export const NAV = [
