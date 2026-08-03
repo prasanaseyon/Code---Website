@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar, Footer, ScrollToTop } from "./layout";
 import {
   Home, About, Work, WorkDetail, Projects, Awards,
-  Publications, Volunteering, Skills, Contact, NotFound,
+  Publications, Volunteering, Skills, Sports, Contact, NotFound,
 } from "./pages";
 import "./styles.css";
 
@@ -24,6 +24,7 @@ export default function App() {
             <Route path="/publications" element={<Publications />} />
             <Route path="/volunteering" element={<Volunteering />} />
             <Route path="/skills" element={<Skills />} />
+            <Route path="/sports" element={<Sports />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
