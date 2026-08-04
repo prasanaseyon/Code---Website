@@ -208,7 +208,9 @@ export function WorkDetail() {
       <Link className="back-link" to="/work"><BackArrow /> Back to Research</Link>
 
       <header className="detail-head">
-        <img className="detail-logo" src={e.logo} alt="" />
+        {e.logo
+          ? <img className="detail-logo" src={e.logo} alt="" />
+          : <span className="detail-logo org-logo-fallback">{e.org.charAt(0)}</span>}
         <div>
           <h1>{e.role}</h1>
           <p className="detail-org">{e.org}</p>
