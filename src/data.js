@@ -147,23 +147,6 @@ export const EXPERIENCE = [
     featured: false,
   },
 
-   {
-    slug: "otis",
-    role: "Instructor",
-    org: "OTIS (Olympiad Training for Individual Study)",
-    logo: "",
-    location: "Remote",
-    dates: "Present",
-    meta: "Present · Remote ·",
-    badge: "Instructor",
-    desc: "Instructor at OTIS, the olympiad training programme run by Evan Chen, training a cohort of five students through weekly sessions.",
-    bullets: [
-      "Trains a cohort of 5 students with weekly one-on-group sessions",
-      "Guides students through advanced olympiad problem sets",
-    ],
-    tags: ["Teaching", "Olympiad Mathematics", "Mentorship"],
-    featured: false,
-  },
   {
     slug: "online-math-club",
     role: "Staff & Instructor",
@@ -333,6 +316,12 @@ export const VOLUNTEER = {
       name: "Vedic Mathrix Camp 2024",
       role: "Instructor",
       desc: "Facilitated a hands-on session for the Raising a Mathematician Foundation, focused on interactive and conceptual mathematical exploration.",
+    },
+
+     {
+      name: "OTIS — Olympiad Training for Individual Study",
+      role: "Instructor",
+      desc: "Instructor on Evan Chen's OTIS programme, training a cohort of five students through weekly sessions on advanced olympiad material.",
     },
     
   ],
