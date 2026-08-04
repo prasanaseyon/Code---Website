@@ -145,6 +145,41 @@ export const EXPERIENCE = [
     tags: ["Teaching", "Outreach"],
     featured: false,
   },
+
+   {
+    slug: "otis",
+    role: "Instructor",
+    org: "OTIS (Olympiad Training for Individual Study)",
+    logo: "",
+    location: "Remote",
+    dates: "Present",
+    meta: "Present · Remote ·",
+    badge: "Instructor",
+    desc: "Instructor at OTIS, the olympiad training programme run by Evan Chen, training a cohort of five students through weekly sessions.",
+    bullets: [
+      "Trains a cohort of 5 students with weekly one-on-group sessions",
+      "Guides students through advanced olympiad problem sets",
+    ],
+    tags: ["Teaching", "Olympiad Mathematics", "Mentorship"],
+    featured: true,
+  },
+  {
+    slug: "online-math-club",
+    role: "Staff & Instructor",
+    org: "Online Math Club",
+    logo: "",
+    location: "India · Remote",
+    dates: "Present",
+    meta: "Present · India · Remote ·",
+    badge: "Staff",
+    desc: "Staff member and instructor, leading live problem-solving sessions for students across India covering mathematical thinking and Olympiad preparation.",
+    bullets: [
+      "Leads live problem-solving sessions for students across India",
+      "Covers mathematical thinking and Olympiad preparation",
+    ],
+    tags: ["Teaching", "Olympiad Mathematics"],
+    featured: false,
+  },
 ];
 
 /* ---- Projects ---- */
@@ -335,7 +370,8 @@ export const SPORTS = [
   {
     icon: "🔤",
     name: "Scrabble",
-    desc: "WESPA rating 1613. Represented India at the World Youth Scrabble Championship in Malaysia, 2025.",
+    desc: "Represented the Indian youth scrabble team at the World Youth Scrabble Championship, Malaysia 2025. WESPA rating 1613.",
+    link: "https://wespa.xerafin.net/player.html?id=37382",
   },
 ];
 
