@@ -162,7 +162,7 @@ export const EXPERIENCE = [
       "Guides students through advanced olympiad problem sets",
     ],
     tags: ["Teaching", "Olympiad Mathematics", "Mentorship"],
-    featured: true,
+    featured: false,
   },
   {
     slug: "online-math-club",
