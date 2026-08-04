@@ -41,12 +41,7 @@ export const NAV = [
        { label: "Articles", to: "/publications" },
     ],
   },
-  {
-    label: "Skills",
-    
-      label: "Skills", to: "/skills",
-    
-  },
+  
   { label: "Achievements", to: "/awards" },
   {
     label: "Leadership & Teaching",
@@ -372,7 +367,6 @@ export const FOOTER_NAV = [
   { label: "Achievements", to: "/awards" },
   { label: "Research Interests", to: "/publications" },
   { label: "Leadership", to: "/volunteering" },
-  { label: "Skills", to: "/skills" },
   { label: "About", to: "/about" },
 ];
 
