@@ -4,7 +4,7 @@
 import React from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import {
-  PROFILE, EXPERIENCE, PROJECTS, AWARDS, ARTICLES, VOLUNTEER, SKILLS, SPORTS,
+  PROFILE, EXPERIENCE, PROJECTS, AWARDS, ARTICLES, VOLUNTEER, SPORTS,
 } from "./data";
 import {
   Reveal, SectionHead, PageHead, Tag, TagList, usePageMeta,
@@ -305,25 +305,6 @@ export function Volunteering() {
               <h3>{o.name}</h3>
               <p className="card-org">{o.role}</p>
               <p className="card-desc">{o.desc}</p>
-            </article>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-export function Skills() {
-  usePageMeta(`Skills | ${SITE}`, "Programming, tools, mathematics, and academic interests.");
-  return (
-    <section className="section">
-      <PageHead icon="spark" title="Skills" lead="" />
-      <div className="grid-2">
-        {SKILLS.map((s, i) => (
-          <Reveal key={s.group} delay={i * 80}>
-            <article className="card">
-              <h3>{s.group}</h3>
-              <div className="tags">{s.items.map((t) => <Tag key={t}>{t}</Tag>)}</div>
             </article>
           </Reveal>
         ))}
