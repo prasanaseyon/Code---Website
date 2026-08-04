@@ -18,10 +18,11 @@ export const PROFILE = {
   socials: {
     github: "https://github.com/zvfrozel",
     scholar: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/abel-george-mathew/",
     codeforces: "",
     fide: "",
     imo: "https://www.imo-official.org/results/contestant/35510/",
+    wespa: "https://wespa.xerafin.net/player.html?id=37382",
     twitter: "",
   },
   cv: "",
@@ -407,4 +408,6 @@ export const FOOTER_NAV = [
 
 export const FOOTER_PROFILES = [
   { label: "IMO Official", href: PROFILE.socials.imo },
+  { label: "WESPA Official", href: PROFILE.socials.wespa },
+   
 ];
