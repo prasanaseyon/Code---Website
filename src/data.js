@@ -320,11 +320,6 @@ export const VOLUNTEER = {
       desc: "A student-led initiative training Olympiad aspirants through structured mentorship and problem-solving sessions. Mentored roughly 25 students a year, designed the curriculum and lecture series, and built a peer-driven learning ecosystem.",
     },
     {
-      name: "Online Math Club",
-      role: "Organizer & Instructor",
-      desc: "Leads live problem-solving sessions for students across India, covering mathematical thinking and Olympiad preparation.",
-    },
-    {
       name: "Karnataka INMOTC 2025",
       role: "Guest Lecturer",
       desc: "Delivered advanced sessions to top national-level Olympiad students at the Indian National Mathematical Olympiad Training Camp.",
