@@ -66,6 +66,15 @@ export function Home() {
     <>
       <Hero />
 
+         <section className="section">
+        <SectionHead icon="medal" title="Achievements" to="/awards" />
+        <div className="grid-3 tight">
+          {AWARDS.filter((a) => a.featured).map((a, i) => (
+            <Reveal key={a.title} delay={i * 70}><AwardCard a={a} /></Reveal>
+          ))}
+        </div>
+      </section>
+
       <section className="section">
         <SectionHead icon="briefcase" title="Research Engagement & Instructor" to="/work" />
         <div className="grid-3">
@@ -84,14 +93,7 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <SectionHead icon="medal" title="Achievements" to="/awards" />
-        <div className="grid-3 tight">
-          {AWARDS.filter((a) => a.featured).map((a, i) => (
-            <Reveal key={a.title} delay={i * 70}><AwardCard a={a} /></Reveal>
-          ))}
-        </div>
-      </section>
+    
 
       <section className="section">
         <SectionHead icon="book" title="Articles" to="/publications" />
@@ -142,14 +144,7 @@ export function About() {
           )}
         </div>
       </Reveal>
-      <Reveal delay={120}>
-        <div className="fact-grid">
-          <div><span>Studying</span><strong>Grade 11, Creative School</strong></div>
-          <div><span>Based in</span><strong>Bangalore, India</strong></div>
-          <div><span>IMO 2026</span><strong>Gold Medal</strong></div>
-          <div><span>INMO 2025</span><strong>All India Rank 1</strong></div>
-        </div>
-      </Reveal>
+      
      
     </section>
   );
