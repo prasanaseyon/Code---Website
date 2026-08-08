@@ -548,7 +548,7 @@ a.sport-card{cursor:pointer;display:block}
 }
 .fact-grid strong{display:block;margin-top:10px;font-size:16px;font-weight:600}
 
-.about p {
+.about-split .prose p {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
